@@ -2,6 +2,29 @@
 ////Name
 ////()  =>[],{} optional
 ////{}  =>
+///
+///
+
+String name = "jlfka";
+
+String? address;
+
+///null
+
+String login(
+  String username,
+  String password,
+) {
+  return "fjaklsdja";
+}
+
+void register({
+  required String email,
+  required String displayName,
+  required String password,
+  String? address,
+  String? dob,
+}) {}
 
 void execute({String? data}) {
   print(data ?? "Hello World");
