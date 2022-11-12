@@ -15,6 +15,7 @@ dependencies:
     git:
       url: https://github.com/YeMyoAung/StarlightTypeAhead.git
   starlight_utils:
+  http:
 
 dev_dependencies:
   lints: ^2.0.0
