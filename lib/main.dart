@@ -1,8 +1,6 @@
-import 'package:dreamtoflutter_widget/button.dart';
 import 'package:dreamtoflutter_widget/card.dart';
-import 'package:dreamtoflutter_widget/container.dart';
 import 'package:dreamtoflutter_widget/sizedbox_stack.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:dreamtoflutter_widget/statewidget.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +13,7 @@ class DreamtoFlutter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: DreamtoFlutterHomePage(),
+      home: StateWidget(),
     );
   }
 }

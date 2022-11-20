@@ -1,0 +1,37 @@
+import 'package:flutter/material.dart';
+
+Widget textField() => TextFormField(
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      validator: (value) => value?.isNotEmpty == true ? null : "empty",
+      // enabled: false,
+      decoration: InputDecoration(
+        // filled: true,
+        // fillColor: Colors.green,
+        suffix: Icon(Icons.email),
+        // contentPadding: EdgeInsets.zero,
+        // isDense: true,
+        // labelText: "Hello",
+        // hintText: "Hello",
+        // helperText: "fjadkjfskl",
+        // errorText: "fhafea",
+        border: OutlineInputBorder(),
+      ),
+      // maxLength: null,
+      // buildCounter: (ctx,
+      //         {required int currentLength,
+      //         required bool isFocused,
+      //         required int? maxLength}) =>
+      //     Text(currentLength.toString()),
+      // scrollPadding: EdgeInsets.symmetric(vertical: 100),
+      // keyboardAppearance: Brightness.dark,
+      // obscuringCharacter: 'h',
+      // obscureText: true,
+      // cursorWidth: 10,
+      // readOnly: true,
+      // textCapitalization: TextCapitalization.words,
+      // maxLines: 5,
+      // textAlign: TextAlign.center,
+      // keyboardType: TextInputType.multiline,
+      focusNode: ff,
+      controller: cc,
+    );
