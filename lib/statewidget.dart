@@ -32,7 +32,7 @@ class _StateWidgetState extends State<StateWidget> {
       child: ListView.builder(
         itemCount: 3,
         itemBuilder: (build, count) {
-          return [card(), TextField(), sizedBoxStack()][count];
+          return [card(), const TextField(), sizedBoxStack()][count];
         },
       ),
     );
@@ -40,24 +40,42 @@ class _StateWidgetState extends State<StateWidget> {
 
   @override
   Widget build(BuildContext context) {
-    print(cc.text);
+    // print(cc.text);
     return Scaffold(
       key: key,
       // drawer: drawerUi(),
       endDrawer: drawerUi(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(
-            height: 20,
-          ),
-          TextButton(
-            onPressed: () {
-              // key.currentState?.openDrawer();
-              key.currentState?.openEndDrawer();
-            },
-            child: Text("Test"),
-          )
+        children: const [
+          // TextFormField(
+          //   autovalidateMode: AutovalidateMode.onUserInteraction,
+          //   validator: (value) {
+          //     // return value?.isNotEmpty == true
+          //     //     ? double.tryParse(value ?? "") == null
+          //     //         ? "We only accept numer"
+          //     //         : null
+          //     //     : null;
+          //     // return value?.startsWith('@') == true
+          //     //     ? null
+          //     //     : "Twitter name must be start with @ sign";
+          //     return null;
+          //   },
+          //   // keyboardType: TextInputType.number,
+          //   decoration: const InputDecoration(
+          //     hintText: "Twitter Name",
+          //   ),
+          // ),
+          // SizedBox(
+          //   height: 20,
+          // ),
+          // TextButton(
+          //   onPressed: () {
+          //     // key.currentState?.openDrawer();
+          //     key.currentState?.openEndDrawer();
+          //   },
+          //   child: Text("Test"),
+          // )
         ],
       ),
     );

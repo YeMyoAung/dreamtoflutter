@@ -1,10 +1,19 @@
 import 'package:dreamtoflutter_widget/card.dart';
 import 'package:dreamtoflutter_widget/sizedbox_stack.dart';
-import 'package:dreamtoflutter_widget/statewidget.dart';
 import 'package:flutter/material.dart';
 
+import 'login_ui.dart';
+
+///TypeScript =>
+///JAVA       =>
+
+///Nodejs     =>
+///Python     =>
+
 void main() {
-  runApp(DreamtoFlutter());
+  // WidgetsFlutterBinding.ensureInitialized();
+  // SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+  runApp(const DreamtoFlutter());
 }
 
 class DreamtoFlutter extends StatelessWidget {
@@ -12,8 +21,8 @@ class DreamtoFlutter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: StateWidget(),
+    return const MaterialApp(
+      home: LoginUi(),
     );
   }
 }
@@ -26,7 +35,7 @@ class DreamtoFlutterHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
+        title: const Text(
           "Our First App Development",
           maxLines: 2,
           textAlign: TextAlign.center,
@@ -51,21 +60,21 @@ class DreamtoFlutterHomePage extends StatelessWidget {
           ),
         ),
         actions: [
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Icon(Icons.search),
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            margin: EdgeInsets.only(right: 20),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            margin: const EdgeInsets.only(right: 20),
+            decoration: const BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.grey,
             ),
-            child: Icon(Icons.notifications),
+            child: const Icon(Icons.notifications),
           ),
         ],
-        leading: Icon(
+        leading: const Icon(
           Icons.menu,
           size: 40,
           color: Color.fromRGBO(0, 0, 0, 1),

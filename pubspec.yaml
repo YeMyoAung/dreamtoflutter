@@ -40,6 +40,8 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
 flutter:
+  assets:
+    - app_image/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
@@ -47,7 +49,7 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   # assets:
-    # - images/a_dot_burr.jpeg
+  #   - app_image/
     # - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -59,10 +61,20 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   # fonts:
-  #   - family: Schyler
+  #     - family: jflaks
+  #       fonts:
+  #         asset: app_image/font.ttf
+  #         style: italic
+  #         weight: 200
+  #   - family: San
   #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+  #       - asset: app_image/Schyler-Regular.ttf
+  #         style: italic
+  #       # - asset: fonts/Schyler-Italic.ttf
+  #       #   style: italic
+  #       - asset: fonts/Schyler-Bold.ttf
+  #       - asset: fonts/Schyler.ttf
+  #         style: normal
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
