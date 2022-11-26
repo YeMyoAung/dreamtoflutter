@@ -1,6 +1,6 @@
 # Install Git
 
-<a href="https://git-scm.com/downloads" >
+<a href="https://git-scm.com/downloads" >Download Git</a>
 
 
 
