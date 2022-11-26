@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:starlight_utils/starlight_utils.dart';
 
 class A extends StatefulWidget {
   const A({super.key});
@@ -27,6 +28,8 @@ class LoginUi extends StatefulWidget {
 
 class _LoginUiState extends State<LoginUi> {
   final GlobalKey<FormState> globalKey = GlobalKey();
+
+  bool isHide = true;
 
   void hello() {
     print("hi");
@@ -103,7 +106,9 @@ class _LoginUiState extends State<LoginUi> {
                   child: TextFormField(
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     validator: (value) => value?.isNotEmpty == true
-                        ? null
+                        ? value!.isEmail
+                            ? null
+                            : "Invaild Email"
                         : "Username is requried",
                     cursorColor: Colors.black54,
                     decoration: InputDecoration(
@@ -134,6 +139,7 @@ class _LoginUiState extends State<LoginUi> {
                   margin: const EdgeInsets.only(
                       left: 30, right: 30, top: 20, bottom: 5),
                   child: TextFormField(
+                    obscureText: isHide,
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     validator: (value) => value?.isNotEmpty == true
                         ? null
@@ -143,6 +149,16 @@ class _LoginUiState extends State<LoginUi> {
                       prefixIcon: const Icon(
                         Icons.lock,
                         color: Colors.black54,
+                      ),
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          isHide = !isHide;
+                          setState(() {});
+                        },
+                        icon: Icon(
+                          isHide ? Icons.visibility_off : Icons.visibility,
+                          color: Colors.black54,
+                        ),
                       ),
                       hintText: "password",
                       // filled: true,

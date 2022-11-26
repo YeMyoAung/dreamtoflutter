@@ -1,8 +1,9 @@
 import 'package:dreamtoflutter_widget/card.dart';
 import 'package:dreamtoflutter_widget/sizedbox_stack.dart';
 import 'package:flutter/material.dart';
+import 'package:starlight_utils/starlight_utils.dart';
 
-import 'login_ui.dart';
+import 'myothiri_ui.dart';
 
 ///TypeScript =>
 ///JAVA       =>
@@ -21,8 +22,9 @@ class DreamtoFlutter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: LoginUi(),
+    return MaterialApp(
+      navigatorKey: StarlightUtils.navigatorKey,
+      home: const MyoThiriLoginUi(),
     );
   }
 }
