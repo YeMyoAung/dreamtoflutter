@@ -1,2 +1,13 @@
-A sample command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
+# Install Git
+
+<a href="https://git-scm.com/downloads" >
+
+
+
+# How To Download With Git
+
+
+# Git Command
+```
+    git clone --branch <Branch Name> https://github.com/YeMyoAung/dreamtoflutter.git
+```
