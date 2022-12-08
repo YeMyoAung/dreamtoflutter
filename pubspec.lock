@@ -121,8 +121,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.10.0"
+  starlight_callback_listview:
+    dependency: "direct main"
+    description:
+      name: starlight_callback_listview
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1"
   starlight_popup_menu:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: starlight_popup_menu
       url: "https://pub.dartlang.org"

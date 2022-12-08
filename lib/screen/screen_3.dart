@@ -1,4 +1,3 @@
-import 'package:dreamtoflutter_widget/screen/screen_4.dart';
 import 'package:flutter/material.dart';
 
 class Screen3 extends StatelessWidget {
@@ -13,25 +12,39 @@ class Screen3 extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            Navigator.pushAndRemoveUntil(context,
-                MaterialPageRoute(builder: (_) {
-              return const Screen4();
-            }), (route) {
-              ///False => Delete
-              ///True  => Skip
+            //  (route) {
+            //   ///False => Delete
+            //   ///True  => Skip
 
-              ///home
-              ///login
-              ///register
-              ///profile
+            //   ///home
+            //   ///login
+            //   ///register
+            //   ///profile
 
-              return ['home', 'profile'].contains(route.settings.name);
+            //   return ['home', 'profile'].contains(route.settings.name);
 
-              // print(route.settings.name);
-              // return route.settings.name == '/3';
+            //   // print(route.settings.name);
+            //   // return route.settings.name == '/3';
+            // }
+            // Navigator.push(
+            //   context,
+            //   MaterialPageRoute(
+            //       settings: const RouteSettings(name: "/4"),
+            //       builder: (_) {
+            //         return const Screen4();
+            //       }),
+            // );
+            // Navigator.pushReplacementNamed(context, '/screen1');
+
+            // Navigator.popUntil(context, (route) {
+            //   return route.settings.name == '/screen1';
+            // });
+            // Navigator.popAndPushNamed(context, '/screen4');
+            Navigator.pushNamedAndRemoveUntil(context, '/screen4', (route) {
+              return route.settings.name == '/screen2';
             });
           },
-          child: const Text("Push and Remove"),
+          child: const Text("Pop Until"),
         ),
       ),
     );

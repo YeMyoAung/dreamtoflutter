@@ -9,6 +9,17 @@ class Screen4 extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Screen 4"),
       ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.popUntil(context, (route) {
+              print(route.settings.name);
+              return true;
+            });
+          },
+          child: const Text("Pop Until"),
+        ),
+      ),
     );
   }
 }
