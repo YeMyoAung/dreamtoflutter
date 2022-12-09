@@ -1,10 +1,8 @@
 import 'package:dreamtoflutter_widget/card.dart';
-import 'package:dreamtoflutter_widget/screen/screen_1.dart';
-import 'package:dreamtoflutter_widget/screen/screen_2.dart';
-import 'package:dreamtoflutter_widget/screen/screen_3.dart';
-import 'package:dreamtoflutter_widget/screen/screen_4.dart';
+import 'package:dreamtoflutter_widget/flex_example.dart';
 import 'package:dreamtoflutter_widget/sizedbox_stack.dart';
 import 'package:flutter/material.dart';
+import 'package:starlight_utils/starlight_utils.dart';
 
 ///TypeScript =>
 ///JAVA       =>
@@ -24,6 +22,8 @@ class DreamtoFlutter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: StarlightUtils.navigatorKey,
+      home: const FlexExample(),
       // routes: {
       //   '/screen1': (a) => const ScreenOne(),
       //   '/screen2': (a) => const Screen2(),
@@ -34,49 +34,49 @@ class DreamtoFlutter extends StatelessWidget {
       // onUnknownRoute: (a) => MaterialPageRoute(
       //       builder: (_) => const Screen4(),
       //     )
-      onGenerateRoute: (settings) {
-        print("Route ${settings.name}");
-        switch (settings.name) {
-          case '/screen1':
-            return MaterialPageRoute(
-              builder: (_) => const ScreenOne(),
-            );
-          case '/screen2':
-            return MaterialPageRoute(
-              builder: (_) => const Screen2(),
-            );
-          case '/screen3':
-            return MaterialPageRoute(
-              builder: (_) => const Screen3(),
-            );
-          default:
-            return MaterialPageRoute(
-              builder: (_) => const Screen4(),
-            );
-        }
-        // if (settings.name == '/screen2') {
-        //   if (settings.arguments != null &&
-        //       ((settings.arguments as int?) ?? 0) > 8) {
-        //     return MaterialPageRoute(builder: (_) {
-        //       return const Screen2();
-        //     });
-        //   } else {
-        //     return MaterialPageRoute(builder: (_) {
-        //       return const Screen4();
-        //     });
-        //   }
-        // }
-        // return MaterialPageRoute(builder: (_) {
-        //   return const ScreenOne();
-        // });
-      },
-      onGenerateInitialRoutes: (afsd) {
-        return [
-          MaterialPageRoute(builder: (_) {
-            return const ScreenOne();
-          })
-        ];
-      },
+      // onGenerateRoute: (settings) {
+      //   print("Route ${settings.name}");
+      //   switch (settings.name) {
+      //     case '/screen1':
+      //       return MaterialPageRoute(
+      //         builder: (_) => const ScreenOne(),
+      //       );
+      //     case '/screen2':
+      //       return MaterialPageRoute(
+      //         builder: (_) => const Screen2(),
+      //       );
+      //     case '/screen3':
+      //       return MaterialPageRoute(
+      //         builder: (_) => const Screen3(),
+      //       );
+      //     default:
+      //       return MaterialPageRoute(
+      //         builder: (_) => const Screen4(),
+      //       );
+      //   }
+      // if (settings.name == '/screen2') {
+      //   if (settings.arguments != null &&
+      //       ((settings.arguments as int?) ?? 0) > 8) {
+      //     return MaterialPageRoute(builder: (_) {
+      //       return const Screen2();
+      //     });
+      //   } else {
+      //     return MaterialPageRoute(builder: (_) {
+      //       return const Screen4();
+      //     });
+      //   }
+      // }
+      // return MaterialPageRoute(builder: (_) {
+      //   return const ScreenOne();
+      // });
+      // },
+      // onGenerateInitialRoutes: (afsd) {
+      //   return [
+      //     MaterialPageRoute(builder: (_) {
+      //       return const ScreenOne();
+      //     })
+      //   ];
+      // },
 
       // navigatorKey: StarlightUtils.navigatorKey,
       ///Anonymous Route
