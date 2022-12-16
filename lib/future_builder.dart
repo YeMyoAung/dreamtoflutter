@@ -6,6 +6,25 @@ import 'package:http/http.dart' as http;
 
 import 'future_builder_detail_screen.dart';
 
+/// Python, => Python
+/// C,
+/// C++,
+/// C#,
+/// .net,
+/// Php,
+/// Nodejs + Express
+///
+/// Java,
+/// Java Se,
+/// Java EE,
+/// Kotlin,
+/// Swift,
+/// Objective C,
+/// Dart => Data Image Processing + Flutter
+/// Ruby
+///
+/// Micro Service ()
+
 class DogList {
   final List<String> dogs;
 
@@ -105,44 +124,72 @@ class _FutureBuilderExampleState extends State<FutureBuilderExample> {
         builder: (_, workingState) {
           print(
               "FutureBuilder => ${workingState.connectionState} ${workingState.data?.dogs.length}");
+
           if (workingState.connectionState == ConnectionState.waiting) {
             ///Loading
             return const Center(
               child: CircularProgressIndicator(),
             );
           }
-          if (workingState.connectionState == ConnectionState.done) {
-            ///Error,Data
-            if (workingState.hasError) {
-              return Center(child: Text(workingState.error.toString()));
-            }
 
-            ///loading
-            return ListView.builder(
-                itemCount: workingState.data!.dogs.length,
-                itemBuilder: (_, i) {
-                  return ListTile(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          settings: RouteSettings(
-                            arguments: workingState.data!.dogs[i],
+          final DogList? data = workingState.data;
+
+          /// "value" ?? "fajflska"
+          return data == null
+              ? Text(workingState.error?.toString() ?? "Something went worng")
+              : ListView.builder(
+                  itemCount: data.dogs.length,
+                  itemBuilder: (_, i) {
+                    return ListTile(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            settings: RouteSettings(
+                              arguments: data.dogs[i],
+                            ),
+                            builder: (_) {
+                              return const FutureBuilderDetailScreen();
+                            },
                           ),
-                          builder: (_) {
-                            return const FutureBuilderDetailScreen();
-                          },
-                        ),
-                      );
-                    },
-                    title: Text(workingState.data!.dogs[i]),
-                  );
-                });
-          }
+                        );
+                      },
+                      title: Text(data.dogs[i]),
+                    );
+                  });
 
-          return const Center(
-            child: Text("Version Error"),
-          );
+          // if (workingState.connectionState == ConnectionState.done) {
+          //   ///Error,Data
+          //   if (workingState.hasError) {
+          //     return Center(child: Text(workingState.error.toString()));
+          //   }
+
+          //   ///loading
+          // return ListView.builder(
+          //     itemCount: workingState.data!.dogs.length,
+          //     itemBuilder: (_, i) {
+          //       return ListTile(
+          //         onTap: () {
+          //           Navigator.push(
+          //             context,
+          //             MaterialPageRoute(
+          //               settings: RouteSettings(
+          //                 arguments: workingState.data!.dogs[i],
+          //               ),
+          //               builder: (_) {
+          //                 return const FutureBuilderDetailScreen();
+          //               },
+          //             ),
+          //           );
+          //         },
+          //         title: Text(workingState.data!.dogs[i]),
+          //       );
+          //     });
+          // }
+
+          // return const Center(
+          //   child: Text("Version Error"),
+          // );
           // ///
           // return Center(
           //   child: Text(

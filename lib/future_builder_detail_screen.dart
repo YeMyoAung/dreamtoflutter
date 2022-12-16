@@ -31,11 +31,32 @@ class FutureBuilderDetailScreen extends StatelessWidget {
       body: FutureBuilder(
         future: getDogDetail(dogType),
         builder: (_, workingState) {
+          /**
+           * Example
+           */
+          // if (workingState.connectionState == ConnectionState.waiting) {
+          //   return CircularProgressIndicator();
+          // }
+
+          // if (workingState.hasError) {
+          //   return Icon(Icons.error);
+          // }
+
+          // final data = workingState.data;
+          // if (data == null) {
+          //   return Text("There is no data");
+          // }
+
+          // return Container();
+          ///
+
           if (workingState.connectionState == ConnectionState.waiting) {
             return const Center(
               child: CircularProgressIndicator(),
             );
           }
+
+          ///None
           if (workingState.connectionState == ConnectionState.done) {
             ///Data,Error
             if (workingState.hasData) {
