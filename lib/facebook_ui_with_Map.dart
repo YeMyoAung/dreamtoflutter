@@ -283,60 +283,90 @@ class _FacebookCloneWithHttpResponseWithMapState
                     showDialog(
                       context: context,
                       builder: (_) {
-                        return Material(
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(8),
-                            topRight: Radius.circular(8),
-                          ),
-                          child: Container(
-                            width: MediaQuery.of(context).size.width,
-                            height: MediaQuery.of(context).size.height,
-                            padding: const EdgeInsets.only(
-                                top: 20, left: 10, right: 10),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text(
-                                  "Comments",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
+                        return AlertDialog(
+                          insetPadding: EdgeInsets.zero,
+                          contentPadding:
+                              const EdgeInsets.only(left: 10, right: 10),
+                          content: Material(
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(8),
+                              topRight: Radius.circular(8),
+                            ),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width,
+                              height: MediaQuery.of(context).size.height,
+                              padding: const EdgeInsets.only(
+                                  top: 20, left: 10, right: 10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    "Comments",
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                                   ),
-                                ),
-                                const Divider(),
-                                Expanded(
-                                    child: ListView.builder(
-                                  padding: const EdgeInsets.only(bottom: 20),
-                                  itemCount: comments.length,
-                                  itemBuilder: (_, i) {
-                                    return Container(
-                                      margin: const EdgeInsets.only(top: 10),
-                                      child: Column(
-                                        children: [
-                                          Row(
-                                            children: [
-                                              const CircleAvatar(
-                                                backgroundImage: NetworkImage(
-                                                    'https://cdn.pixabay.com/photo/2013/07/13/10/07/man-156584__340.png'),
-                                              ),
-                                              const SizedBox(
-                                                width: 10,
-                                              ),
-                                              Text(comments[i]['name'])
-                                            ],
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 50, right: 20),
-                                            child: Text(comments[i]['comment']),
-                                          )
-                                        ],
+                                  const Divider(),
+                                  Expanded(
+                                      child: ListView.builder(
+                                    padding: const EdgeInsets.only(bottom: 20),
+                                    itemCount: comments.length,
+                                    itemBuilder: (_, i) {
+                                      return Container(
+                                        margin: const EdgeInsets.only(top: 10),
+                                        child: Column(
+                                          children: [
+                                            Row(
+                                              children: [
+                                                const CircleAvatar(
+                                                  backgroundImage: NetworkImage(
+                                                      'https://cdn.pixabay.com/photo/2013/07/13/10/07/man-156584__340.png'),
+                                                ),
+                                                const SizedBox(
+                                                  width: 10,
+                                                ),
+                                                Text(comments[i]['name'])
+                                              ],
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 50, right: 20),
+                                              child:
+                                                  Text(comments[i]['comment']),
+                                            )
+                                          ],
+                                        ),
+                                      );
+                                    },
+                                  )),
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 20),
+                                    child: TextField(
+                                      decoration: InputDecoration(
+                                        contentPadding:
+                                            const EdgeInsets.symmetric(
+                                          horizontal: 20,
+                                        ),
+                                        border: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(60),
+                                          borderSide: BorderSide.none,
+                                        ),
+                                        hintText: 'Write a comment...',
+                                        suffixIcon: const Icon(
+                                          Icons.camera_alt,
+                                          color: Colors.grey,
+                                        ),
+                                        filled: true,
+                                        fillColor: const Color.fromRGBO(
+                                            224, 221, 224, 1),
                                       ),
-                                    );
-                                  },
-                                )),
-                                const TextField(),
-                              ],
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         );
